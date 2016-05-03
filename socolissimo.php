@@ -64,7 +64,7 @@ class Socolissimo extends CarrierModule
 	{
 		$this->name = 'socolissimo';
 		$this->tab = 'shipping_logistics';
-		$this->version = '2.10.00';
+		$this->version = '2.10.1';
 		$this->author = 'Quadra Informatique';
 		$this->limited_countries = array('fr','be');
 		$this->module_key = '8b991db851bdf7c64ca441f1a4481964';
@@ -174,7 +174,7 @@ class Socolissimo extends CarrierModule
 				  `lotacheminement` varchar(64) NOT NULL,
 				  `distributionsort` varchar(64) NOT NULL,
 				  `versionplantri` text(10) NOT NULL,
-				  `dyforwardingcharges` decimal(20.6) NOT NULL,
+				  `dyforwardingcharges` decimal(20,6) NOT NULL,
 				  PRIMARY KEY  (`id_cart`,`id_customer`)
 				) ENGINE='._MYSQL_ENGINE_.' DEFAULT CHARSET=utf8;';
 
@@ -1603,7 +1603,7 @@ class Socolissimo extends CarrierModule
 		if (version_compare(_PS_VERSION_, '1.5', '<'))
 		{
 			if (Configuration::get('SOCOLISSIMO_VERSION') != $this->version)
-				foreach (array('2.8.0', '2.8.4', '2.8.5','2.9.20','2.9.21','2.9.22','2.9.24','2.9.25','2.10.00') as $version)
+				foreach (array('2.8.0', '2.8.4', '2.8.5','2.9.20','2.9.21','2.9.22','2.9.24','2.9.25','2.10.00','2.10.1') as $version)
 				{
 					$file = dirname(__FILE__).'/upgrade/install-'.$version.'.php';
 					if (version_compare(Configuration::get('SOCOLISSIMO_VERSION'), $version,'<') && file_exists($file))
