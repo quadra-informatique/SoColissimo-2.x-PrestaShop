@@ -64,7 +64,7 @@ class Socolissimo extends CarrierModule
 	{
 		$this->name = 'socolissimo';
 		$this->tab = 'shipping_logistics';
-		$this->version = '2.10.1';
+		$this->version = '2.10.2';
 		$this->author = 'Quadra Informatique';
 		$this->limited_countries = array('fr','be');
 		$this->module_key = '8b991db851bdf7c64ca441f1a4481964';
